@@ -1,6 +1,8 @@
-import { Hero } from '../components/Hero.jsx';
-import { Stats } from '../components/Stats.jsx';
+import { Navbar } from '../components/Navbar.jsx';
+import { SearchBar } from '../components/SearchBar.jsx';
+import { Footer } from '../components/Footer.jsx';
 import { getPageFromSlug, getPagePaths } from '../utils/content.js';
+import { ComponentRegistry } from '../utils/registry.js';
 
 export async function getStaticPaths() {
   const paths = await getPagePaths();
@@ -13,18 +15,32 @@ export async function getStaticProps({ params }) {
   return { props: { page } };
 }
 
-const componentMap = {
-  hero: Hero,
-  stats: Stats,
-};
+const componentMap = ComponentRegistry();
 
 export default function ComposablePage({ page }) {
   return (
-    <div data-sb-object-id={page.id}>
-      {(page.sections || []).map((section, idx) => {
-        const Component = componentMap[section.type];
-        return <Component key={idx} {...section} />;
-      })}
-    </div>
+    <>
+      <div data-sb-object-id={page.id} className="w-full flex flex-col sm:flex-row flex-wrap flex-grow">
+        <Navbar />
+
+        <main role="main" className="w-full flex-grow">
+          <SearchBar />
+
+          <div className="md:container md:mx-auto mx-auto w-full max-w-screen-xl p-4 py-6 lg:py-8">
+            {(page.sections || []).map((section, idx) => {
+              const Component = componentMap[section.type];
+
+              if (!Component) return;
+              return (
+                <div key={`${section.type}_${idx}`} className="py-[50px]">
+                  <Component {...section} />
+                </div>
+              );
+            })}
+          </div>
+        </main>
+      </div>
+      <Footer />
+    </>
   );
 }
