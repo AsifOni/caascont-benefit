@@ -1,13 +1,13 @@
 import { ThreeColumnCard as CAASCOntThreeColumnCard } from 'ccgx-caascont';
 
 export const ThreeColumnCard = (props) => {
-  const { containerStyle } = props;
+  const { background } = props;
 
   return (
-    <div className="md:container mx-auto" data-sb-object-id={props.id}>
+    <div data-sb-object-id={props.id}>
       <CAASCOntThreeColumnCard
         {...props}
-        containerStyle={`py-8 ${containerStyle || ''}`}
+        containerStyle={`custom-threeColumnCard py-8 ${background ? 'bg-neutral-100' : ''}`}
         gridStyle="gap-5 justify-center"
         sbDataAttr={{
           title: 'title',

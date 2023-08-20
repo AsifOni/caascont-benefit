@@ -1,5 +1,4 @@
 import { Navbar } from '../components/Navbar.jsx';
-import { SearchBar } from '../components/SearchBar.jsx';
 import { Footer } from '../components/Footer.jsx';
 import { getPageFromSlug, getPagePaths } from '../utils/content.js';
 import { ComponentRegistry } from '../utils/registry.js';
@@ -24,15 +23,13 @@ export default function ComposablePage({ page }) {
         <Navbar />
 
         <main role="main" className="w-full flex-grow">
-          <SearchBar />
-
-          <div className="md:container md:mx-auto mx-auto w-full max-w-screen-xl p-4 py-6 lg:py-8">
+          <div className="w-full">
             {(page.sections || []).map((section, idx) => {
               const Component = componentMap[section.type];
 
               if (!Component) return;
               return (
-                <div key={`${section.type}_${idx}`} className="pb-[50px]">
+                <div key={`${section.type}_${idx}`}>
                   <Component {...section} />
                 </div>
               );

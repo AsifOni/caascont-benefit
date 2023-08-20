@@ -2,16 +2,14 @@ export const Footer = () => {
   return (
     <>
       <div className="flex flex-row bg-pattern"></div>
-      <footer className="bg-white">
+      <footer className="px-10 bg-[#f4f4f4]">
         <div className="md:container md:mx-auto mx-auto w-full max-w-screen-xl p-4 py-6 lg:py-8">
           <div className="md:flex md:justify-between">
             <div className="mb-6 md:mb-0">
               <a href="https://caasco.com/" className="flex items-center">
-                <img src="CAALogo.svg" className="w-20 h-20 mr-3" alt="CAA Logo" />
+                <img src="CAALogo.png" className="w-36 h-16 mr-3" alt="CAA Logo" />
               </a>
-              <div className="w-[332px] m-9 ml-0">
-                Dive into a world of perks and privileges, and discover the unmatched benefits that await you!
-              </div>
+              <div className="w-[332px] m-9 ml-0"></div>
               <div className="flex mt-4 space-x-5 sm:mt-0">
                 <a href="#" className="text-gray-500 hover:text-gray-900 dark:hover:text-white">
                   <svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" viewBox="0 0 24 25" fill="none">
@@ -53,7 +51,7 @@ export const Footer = () => {
             </div>
             <div className="grid grid-cols-2 gap-3 sm:gap-3 sm:grid-cols-4">
               <div>
-                <h2 className="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Overview</h2>
+                <h2 className="mb-6 text-sm font-semibold text-[#4d5056] uppercase dark:text-white">Overview</h2>
                 <ul className="text-gray-500 dark:text-gray-400 font-medium">
                   <li>
                     <a href="#" className="hover:underline">
@@ -98,7 +96,7 @@ export const Footer = () => {
                 </ul>
               </div>
               <div>
-                <h2 className="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">About CAA</h2>
+                <h2 className="mb-6 text-sm font-semibold text-[#4d5056] uppercase dark:text-white">About CAA</h2>
                 <ul className="text-gray-500 dark:text-gray-400 font-medium">
                   <li>
                     <a href="#" className="hover:underline ">
@@ -128,7 +126,7 @@ export const Footer = () => {
                 </ul>
               </div>
               <div>
-                <h2 className="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Contact</h2>
+                <h2 className="mb-6 text-sm font-semibold text-[#4d5056] uppercase dark:text-white">Contact</h2>
                 <ul className="text-gray-500 dark:text-gray-400 font-medium">
                   <li>
                     <a href="#" className="hover:underline">
@@ -148,7 +146,7 @@ export const Footer = () => {
                 </ul>
               </div>
               <div>
-                <h2 className="mb-6 text-sm font-semibold text-gray-900 uppercase dark:text-white">Legal</h2>
+                <h2 className="mb-6 text-sm font-semibold text-[#4d5056] uppercase dark:text-white">Legal</h2>
                 <ul className="text-gray-500 dark:text-gray-400 font-medium">
                   <li>
                     <a href="#" className="hover:underline">
