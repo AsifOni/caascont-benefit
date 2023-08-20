@@ -1,26 +1,19 @@
-import { Card } from './Card';
+import { ThreeColumnCard as CAASCOntThreeColumnCard } from 'ccgx-caascont';
 
 export const ThreeColumnCard = (props) => {
-  const { title, subText, cardData } = props;
+  const { containerStyle } = props;
+
   return (
-    <div className="md:container mx-auto pad my-8" data-sb-object-id={props.id}>
-      {title && (
-        <h4 className="mb-[0.75rem]" data-sb-field-path="title">
-          {title}
-        </h4>
-      )}
-
-      {subText && (
-        <p className="mb-[3rem]" data-sb-field-path="subText">
-          {subText}
-        </p>
-      )}
-
-      <div className="flex flex-row flex-wrap md:flex-nowrap md:space-x-5">
-        {cardData?.map((data, idx) => {
-          return <Card key={`card-data-${idx}`} {...data} />;
-        })}
-      </div>
+    <div className="md:container mx-auto" data-sb-object-id={props.id}>
+      <CAASCOntThreeColumnCard
+        {...props}
+        containerStyle={`py-8 ${containerStyle || ''}`}
+        gridStyle="gap-5 justify-center"
+        sbDataAttr={{
+          title: 'title',
+          subText: 'subText',
+        }}
+      />
     </div>
   );
 };

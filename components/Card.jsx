@@ -1,4 +1,4 @@
-import { Card as CaascontCard } from 'ccg-caascont';
+import { Card as CaascontCard } from 'ccgx-caascont';
 
 import { Button } from './Button';
 

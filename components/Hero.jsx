@@ -1,4 +1,4 @@
-import { Hero as CaascontHero } from 'ccg-caascont';
+import { Hero as CaascontHero } from 'ccgx-caascont';
 
 export const Hero = (props) => {
   const { id, img = {}, ...restProps } = props;

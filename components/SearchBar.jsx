@@ -1,8 +1,8 @@
-import { Button as CButton } from 'ccg-caascont';
+import { Button as CButton } from 'ccgx-caascont';
 
 export const SearchBar = () => {
   return (
-    <div className="flex p-8 justify-center bg-caa-pink">
+    <div className="flex p-8 justify-center bg-caa-pink search-bar">
       <div className="w-[625px] mr-6 self-center">
         <div className="flex bg-white p-2 items-center divide-x">
           <div className="flex w-80 px-3">

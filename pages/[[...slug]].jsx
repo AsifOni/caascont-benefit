@@ -32,7 +32,7 @@ export default function ComposablePage({ page }) {
 
               if (!Component) return;
               return (
-                <div key={`${section.type}_${idx}`} className="py-[50px]">
+                <div key={`${section.type}_${idx}`} className="pb-[50px]">
                   <Component {...section} />
                 </div>
               );

@@ -1,10 +1,10 @@
-import { Button as CaascontButton } from 'ccg-caascont';
+import { Button as CaascontButton } from 'ccgx-caascont';
 
 export const Button = (props) => {
   const { label, id } = props;
   return (
     <div data-sb-object-id={id}>
-      <CaascontButton label={label} sbDataAttr={{ label: 'label' }} />
+      <CaascontButton {...props} label={label} sbDataAttr={{ label: 'label' }} />
     </div>
   );
 };

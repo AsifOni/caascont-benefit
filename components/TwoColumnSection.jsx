@@ -1,14 +1,18 @@
-import Image from 'next/image';
-import { Card } from './Card';
+import { TwoColumnSection as CAASCOntTwoColumnSection } from 'ccgx-caascont';
+import { Button } from './Button';
 
 export const TwoColumnSection = (props) => {
-  const { img: masterImg = {}, cardData = {} } = props;
-  const { src: masterSrc, alt: masterAlt } = masterImg;
+  const { buttonData = {} } = props.cardData || {};
+  const isButtonExist = Object.keys(buttonData).length > 0;
 
   return (
-    <div className="md:container mx-auto my-8 flex justify-between" data-sb-object-id={props.id}>
-      {cardData && <Card className={'w-1/2'} {...cardData} />}
-      <Image src={masterSrc} alt={masterAlt} width={520} height={412} />
+    <div className="md:container mx-auto my-8 relative" data-sb-object-id={props.id}>
+      <CAASCOntTwoColumnSection {...props} containerStyle="justify-center" />
+      {isButtonExist && (
+        <div className="flex absolute top-[75%] left-[53%]">
+          <Button {...buttonData} />
+        </div>
+      )}
     </div>
   );
 };
